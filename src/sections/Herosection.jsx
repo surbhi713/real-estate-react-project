@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDarkMode } from '../components/DarkModeContext'
 import heroimg from '../../assets/images/hero1.webp'
 import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 
 function Herosection() {
   useEffect(()=>{
@@ -14,13 +16,67 @@ function Herosection() {
   },[])
   const {darkmode, toggleDarkMode} =useDarkMode()
   return (
-    <div>
-       <div className={`${darkmode ? 'dark-bg-color' : 'light-bg-color'}`}>
+    <>
+      {/* heroimg section */}
+
+       <div className={`${darkmode ? 'dark bg-black' : 'light bg-white'}`}>
        <section id='hero' className='w-[95%] h-[600px] m-auto bg-cover bg-center 
        rounded-xl flex justify-center flex-col items-start lg:px-28 px-10 gap-7 z-20'
-        style={{backgroundImage:`url(${heroimg})`}} ></section>
+        style={{backgroundImage:`url(${heroimg})`}} >
+        <h1 data-aos="zoom-in" className='text-6xl text-white font-semibold lg:pr[500px]
+        pr-0 lg:leading[70px] leading-[60px]'>Find Your Next Home In Las Vegas</h1>
+        <p data-aos="zoom-in" className='text-xl text-white lg:pr-[500px] pr-0 '>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat autem magni neque nam, tempore commodi aperiam exercitationem quisquam
+        ipsum? Quasi eveniet fugiat deleniti quibusdam consectetur eum. Minima nam eum autem!</p>
+        </section>
        </div>
-    </div>
+
+        {/* form starts here  */}
+        <div className={`${darkmode? 'dark bg-black' : 'light bg-transparent'}z-10`}>
+          <div data-aos="zoom-in" id="form" className={`${darkmode? 'dark bg-gray-800': 'light bg-white'}
+          lg:w-[70%] w-full m-auto grid lg:grid-cols-4 grid-cols-1 justify-center items-center gap-6 p-8 
+          rounded-xl mt-14`}>
+         <div className='w-full'>
+            <h1 className='text-black font-semibold dark:text-white'>LOCATION</h1>
+            <input type="text" placeholder='Enter an address, state, city or pincode' className='text-black bg-white p-2 
+            w-full mt-2 border-b-[1px] border-[#c9c7c1]' />
+         </div>
+
+         <div className='w-full'>
+            <h1 className="text-black font-semibold dark:text-white">TYPE</h1>
+            <select name="selectOption" id="selectOption" className='bg-white p-2 border-b-[1px] w-full mt-2
+            border-[#c9c7c1] text-gray-500 text-md' defaultValue="">
+              <option value="" disabled selected>Select Property</option>
+              <option value="option1">Rentals1</option>
+              <option value="option2">Rentals2</option>
+              <option value="option3">Rentals3</option>
+              </select>
+         </div>
+
+        <div className='w-full'>
+            <h1 className='text-black font-semibold dark:text-white'>Category</h1>
+            <select name="categoryoption" id="categoryoption" className='bg-white p-2 border-b-[1px] w-full
+            mt-2 border-[#c9c7c1] text-gray-500 text-md' defaultValue="">
+              <option value="" disabled selected>Select Category</option>
+              <option value="option1">Apartments</option>
+              <option value="option2">Duples</option>
+              <option value="option3">Twin Rooms</option>
+              <option value="option4">Condos</option>
+              <option value="option5">Delux</option>
+
+            </select>
+        </div>
+
+        <div className='w-full'>
+          <button className='bg-red-600 dark:bg-red-700 hover:bg-black dark:hover:bg-white dark:hover:text-black
+          hover:text-white text-lg p-4 rounded-xl w-full text-white font-semibold cursor-pointer transform
+          hover:scale-110 transition-transform duration-300'>
+            Submit
+          </button>
+        </div>
+        </div>
+       </div>
+
+    </>
   )
 }
 
