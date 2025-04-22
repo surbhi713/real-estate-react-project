@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Herosection from './sections/Herosection'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import About from './sections/About'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <DarkModeProvider>
         <Header/>
         <Herosection/>
+        <About/>
         <Footer/>
       </DarkModeProvider>
 
