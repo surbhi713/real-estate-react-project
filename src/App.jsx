@@ -6,6 +6,7 @@ import Herosection from './sections/Herosection'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import About from './sections/About'
+import PopularAreas from './sections/PopularAreas'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Header/>
         <Herosection/>
         <About/>
+        <PopularAreas/>
         <Footer/>
       </DarkModeProvider>
 

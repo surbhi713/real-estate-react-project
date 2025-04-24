@@ -33,7 +33,8 @@ function Herosection() {
         {/* form starts here  */}
         <div className={`${darkmode? 'dark bg-black' : 'light bg-transparent'}z-10`}>
           <div data-aos="zoom-in" id="form" className={`${darkmode?'dark:bg-gray-800 ' : 'light bg-white'}
-          p-8 m-auto lg:w-[70%] w-full justify-center items-center gap-6 rounded-xl mt-14
+            grid lg:grid-cols-4 grid-cols-1 
+          p-8 m-auto lg:w-[70%] w-full justify-center items-center gap-6 rounded-xl mt-14 
           `}>
             
            {/* grid lg:grid-cols-4 grid-cols-1  */}
