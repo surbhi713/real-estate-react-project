@@ -21,10 +21,10 @@ function PopularAreas() {
 
   return (
   
-    <div className={`${darkmode?'dark bg-black' : 'light bg-transparent'}`}>
+    <div className={`${darkmode?'dark bg-black' : 'light bg-transparent'} mr-10 ml-10`}>
       <section className={`${darkmode? 'dark:bg-gray-800' : 'light bg-red-100'}lg:w-[90%]
       w-full h-fit m-auto bg-cover bg-center rounded-xl flex justify-center flex-col items-center
-      lg:px-20 px-6 py-20 gap-20}`}>
+      lg:px-20 px-6 py-20 gap-20  bg-red-200 }`}>
 
         <div id='top' className='w-full grid lg:grid-cols-3 grid-cols-1 justify-center 
         gap-8 items-center'>
