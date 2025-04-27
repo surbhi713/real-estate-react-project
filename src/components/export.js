@@ -1,4 +1,4 @@
-import prop1 from "../../assets/images/prop1.webp";
+import prop1 from "../../assets/images/prop1.webp"
 import prop2 from "../../assets/images/prop2.webp";
 import prop3 from "../../assets/images/prop3.webp";
 import prop4 from "../../assets/images/prop4.webp";
