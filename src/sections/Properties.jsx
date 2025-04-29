@@ -1,60 +1,9 @@
-// import React, { useEffect } from 'react'
-// import Aos from 'aos'
-// import 'aos/dist/aos.css';
-// import {property} from "../components/export.js"
-// import { MdSpaceDashboard } from "react-icons/md";
-// import {FaBath,FaVideo,FaBed,FaShareAlt,FaCircle,FaPlus,FaMapMarkerAlt,FaCamera} from "react-icons/fa";
-// import { useDarkMode } from '../components/DarkModeContext';
-// import prop1 from "../../assets/images/prop1.webp"
-
-
-// function Properties() {
-//   useEffect(()=>{
-//     Aos.init({
-//       easing:'ease-in-sine',
-//       delay:100,
-//       duration:800,
-//       offset:200
-//     })
-//   },[])
-//   const {darkmode, toggleDarkMode} = useDarkMode()
-  
-//   return (
-    
-
-//         {/* properties grid start from here */}
-
-//         <div id='gridbox' className=' w-full grid lg:grid-cols-3 grid-cols-1
-//         justify-center items-center gap-8'>
-//           {
-//             property.map((items,index)=>{
-//               <div id='image-container' 
-//               key={index} className='bg-yellow-50 dark:bg-gray-800 rounded-xl w-full'>
-//                 <div id='image-box' className='h-[250px] bg-cover bg-center
-//                 p-4 rounded-xl flex flex-col justify-between items-end'
-//                  style={{backgroundImage:`url(${items.images})`}}>
-                  
-//                  </div>
-//               </div>
-//             })
-//           }
-//         </div>
-//       </section>
-      
-//     </div>
-//   )
-// }
-
-// export default Properties
-
-
-
 import React, { useEffect } from "react";
 import {property} from '../components/export.js';
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import { MdSpaceDashboard } from "react-icons/md";
-import {FaBath,FaVideo,FaBed,FaShareAlt,FaCircle,FaPlus,FaMapMarkerAlt,FaCamera} from "react-icons/fa";
+import {FaBath,FaVideo,FaBed,FaShareAlt,FaCircle,FaPlus,FaMapMarkerAlt,FaCamera, FaMdb, FaUserClock, FaUserCircle, FaHeart} from "react-icons/fa";
 import { useDarkMode } from '../components/DarkModeContext';
 
 
@@ -81,7 +30,7 @@ function Properties() {
           <h1 data-aos="zoom-in" className="font-semibold text-black text-4xl dark:text-white ">EXPLORE THE MOST</h1>
         </div>
         
-        {/* properties grid start from here */}
+        {/* properties grid start from here(images) */}
         <div id="grid-box" className="w-full grid lg:grid-cols-3 grid-cols-1 justify-center
         items-start gap-8">
         {
@@ -92,8 +41,92 @@ function Properties() {
              w-full">
               
             <div id="image-box" className="bg-cover bg-center h-[250px] rounded-xl
-              p-4 flex flex-col justify-between items-end" 
+              p-4 flex flex-col justify-between items-start" 
               style={{backgroundImage:`url(${item.images})`}}> 
+              <div id="top" className="w-full flex justify-between items-end">
+                
+                {/* buttons featured,sales and active */}
+              <div>
+                <button className="bg-red-600 text-white py-1 px-3 rounded-full
+                text-[13px] font-semibold transform hover:scale-110
+                 hover:bg-black hover:text-white transition-transform duration-300">Featured</button>
+              </div>
+
+              <div className="flex justify-between items-center gap-3">
+                <button className="bg-red-600 text-white py-1 px-3 rounded-full
+                text-[13px] font-semibold transform hover:scale-110
+                 hover:bg-black hover:text-white m-auto transition-transform duration-300">Sales</button>
+
+              <button className="bg-red-600 text-white py-1 px-3 rounded-full
+                text-[13px] font-semibold transform hover:scale-110
+                 hover:bg-black hover:text-white m-auto transition-transform duration-300">Active </button>
+              </div>
+              
+              </div>
+
+              {/* address */}
+              <div id="bottom" className="flex justify-center items-end w-full">
+                <div className="flex justify-start items-center gap-2">
+                  <FaMapMarkerAlt className="size-4 text-white"/>
+                  <h1 className="text-white">
+                    {item.address}
+                  </h1>
+                </div>
+                
+                <div className="flex justify-center items-end gap-4 m-auto">
+                  <FaVideo className="size-4 text-white"/>
+                  <FaCamera className="size-4 text-white"/>
+                </div>
+
+              </div>
+            
+            </div>
+
+            {/* about and icons */}
+            <div className=" px-6 py-3 flex flex-col justify-center  items-start">
+              <h1 className="font-semibold font-xl dark:text-white">{item.name}</h1>
+              <h1 className="text-2xl font-bold text-red-600 dark:text-white">{item.price}</h1>
+              <p className="dark:text-white">{item.about}</p>
+
+            <div id="icons" className="flex justify-center items-start gap-2">
+            <div className="flex justify-center items-start gap-2 mt-2">
+                <FaBath className="size-5 text-red-900"/>
+                <h1 className="dark:text-white">{item.bath}</h1>
+              </div>
+              <div className="flex justify-center items-start gap-2  mt-2">
+                <FaBed className="size-5 text-red-900"/>
+                <h1 className="dark:text-white">{item.bed}</h1>
+              </div>
+              <div className="flex justify-center items-start gap-2  mt-2">
+                <MdSpaceDashboard className="size-5 text-red-900"/>
+                <h1 className="dark:text-white">{item.area}</h1>
+              </div>
+
+            </div>
+             
+             {/* owner and icons */}
+
+             <div className="h-[1px] bg-gray-800 w-full mt-8"></div>
+             <div id="owner_info" className="flex justify-between items-center w-full mt-2">
+             <div className="flex justify-center gap-2 items-center">
+              <FaUserCircle className="size-5 text-red-400"/>
+              <h1 className="dark:text-white">{item.owner}</h1>
+             </div>
+
+             <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer
+             transform hover:scale-110 transition-transform duration-300">
+              <FaHeart className="size-4 text-red-400"/>
+             </div>
+             <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer
+             transform hover:scale-110 transition-transform duration-300">
+              <FaShareAlt className="size-4 text-red-400"/>
+             </div>
+             <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer
+             transform hover:scale-110 transition-transform duration-300">
+              <FaPlus className="size-4 text-red-400"/>
+             </div>
+             </div>
+             
             </div>
           </div>
           )
