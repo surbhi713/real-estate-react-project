@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import About from './sections/About'
 import PopularAreas from './sections/PopularAreas'
 import Properties from './sections/Properties'
+import Services from './sections/Services'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <About/>
         <PopularAreas/>
         <Properties/>
+        <Services/>
         <Footer/>
       </DarkModeProvider>
 
