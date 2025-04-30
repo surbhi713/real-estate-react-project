@@ -9,6 +9,7 @@ import About from './sections/About'
 import PopularAreas from './sections/PopularAreas'
 import Properties from './sections/Properties'
 import Services from './sections/Services'
+import Client from './sections/Client'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <PopularAreas/>
         <Properties/>
         <Services/>
+        <Client/>
         <Footer/>
       </DarkModeProvider>
 
