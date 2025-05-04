@@ -13,6 +13,7 @@ function About() {
       delay:100,
     })
   },[])
+  
   const {darkmode, toggleDarkMode} = useDarkMode()
 
   return (
