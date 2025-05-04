@@ -11,6 +11,7 @@ import Properties from './sections/Properties'
 import Services from './sections/Services'
 import Client from './sections/Client'
 import Contact from './sections/Contact'
+// import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 
 
 function App() {
