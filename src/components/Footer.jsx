@@ -16,10 +16,13 @@ function Footer() {
 
   return (
     <>
-    <footer className={`${darkmode? 'dark:bg-black' : 'light bg-gray-800'}  w-full
-    py-20 lg:px-20 px-10 mt-10 grid lg:grid-cols-3  grid-cols-1 lg:gap-20 gap-10 justify-center items-start `}>
+    <footer className={`${darkmode? 'bg-black' : 'light bg-gray-800'}  w-full
+    py-20 lg:px-20 px-10 grid lg:grid-cols-3  grid-cols-1 lg:gap-20 gap-10 justify-center items-start `}>
+      
+      {/* ABOUT US */}
+      
       <div className='flex flex-col justify-center items-start gap-4'>
-        <h1 className='text-white font-semibold text-2xl '>About Us</h1>
+        <h1 className='text-white font-semibold text-2xl'>About Us</h1>
         <p className='text-slate-400 text-justify'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque voluptatibus architecto repudiandae voluptates sit inventore, molestiae vitae distinctio tempora eos nihil debitis nobis possimus sunt modi neque quae optio ut.</p>
         <div id='social-icons' className='flex justify-cenetr items-start gap-4 mt-4'>
           <div className='p-3 bg-white rounded-xl cursor-pointer transform  hover:bg-red-600
@@ -46,6 +49,8 @@ function Footer() {
 
         <h1 className='text-white mt-10 text-lg'>Copyrights Real Estate, All Rights Reserverd</h1>
       </div>
+
+    {/* CONTACT US */}
 
       <div className='flex flex-col justify-center items-start gap-6 '>
         <h1 className='text-white text-2xl font-semibold'>
@@ -74,18 +79,20 @@ function Footer() {
 
       </div>
 
+      {/* LATEST PROPERTIES */}
+
       <div id='latest-properties' className='flex flex-col justify-center items-start gap-6'>
         <h1 className='text-white font-semibold text-2xl gap-6'>Latest properties</h1>
-        <div className='flex flex-col justify-center items-center gap-4'>
+        <div>
           <img src={prop7} alt="" className='rounded-lg w-[120px] transform hover:scale-110
           cursor-pointer transition-transform duration-300'/>
-          <div>
+          <div className='gap-4'>
           <h1 className='text-white font-semibold'>Villa With Amazing View</h1>
           <p className='text-white font-semibold'>$289.79</p>
           </div>
          </div>
 
-         <div>
+         <div >
          <img src={prop8} alt="" className='rounded-lg w-[120px] transform hover:scale-110
           cursor-pointer transition-transform duration-300'/>
          <div>

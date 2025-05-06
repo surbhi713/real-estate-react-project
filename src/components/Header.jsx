@@ -42,28 +42,26 @@ function Header() {
     },
   ]
   return (
-   <nav className={`${darkmode ? 'dark:bg-black' : 'light bg-[#f3f3f3]'} flex justify-between items-center
+   <nav  className={`${darkmode ? 'bg-black' : 'light bg-[#f3f3f3]'} flex justify-between items-center
    gap-4 lg:px-20 px-4 py-3 sticky top-0 z-30`}>
-  
-      <div id='logo'>
-      <img src={logo} alt="company logo" className='w-[120px] dark:invert lg:w-[150px]' />
-      </div>
 
-    {/* what new we leant? link to and path */}
+      <div id='logo'>
+      <img src={logo} alt="company logo"  className={`${darkmode ? 'w-[120px] invert lg:w-[150px]' : 'w-[120px] lg:w-[150px]'}`}/>
+      </div>
+        {/* what new we leant? link to and path */}
 
     <ul className='lg:flex justify-center items-center gap-8 hidden'>
       {
         navItmes.map(({link,path})=>(
           <Link key={path} to={path} spy={true} offset={-100} smooth={true}
-          className='text-black text-[15px] font-semibold uppercase cursor-pointer
-          px-3 py-2 rounded-lg dark:text-white hover:bg-red-600 hover:text-white'>{link}</Link>
+          className={`${darkmode ? 'text-white text-[15px] font-semibold uppercase cursor-pointer px-3 py-2 rounded-lg dark:text-white hover:bg-red-600 hover:text-white' :
+             'text-black text-[15px] font-semibold uppercase cursor-pointer px-3 py-2 rounded-lg dark:text-white hover:bg-red-600 hover:text-white'}`}>{link}</Link>
         ))
       }
 
     </ul>
 
     {/* mobile menu icon starts here */}
-
 
     <div className='flex justify-center items-center lg:hidden' onClick={togglemenu}>
       <div>
@@ -75,7 +73,7 @@ function Header() {
   
    <div className={`${isMenuOpen? 'flex' : 'hidden'}  w-full h-fit  bg-slate-800 p-4 
    absolute top-[80px] left-0'`} onClick={closemenu}>
-    <ul className='flex flex-col justify-center items-center gap-2 w-full '>
+x     <ul className='flex flex-col justify-center items-center gap-2 w-full '>
       {
         navItmes.map(({link,path})=>(
         <Link key={path} spy={true} offset={-100} smooth={true}
@@ -86,20 +84,24 @@ function Header() {
     </ul>
    </div>
 
-      <div className='flex  justify-center items-center lg:gap-8 gap-2'>
-        <div className='flex justify-between items-center lg:gap-3 gap-1'>
+      <div className='flex  justify-center items-center lg:gap-7 gap-4'>
+        <div className='flex justify-between items-center lg:gap-7 gap-3'>
           <FaPhoneAlt className='size-5 text-red-700'/>
-          <h1 className='text-sm lg:text-xl text-black dark:text-white font-semibold'>
+          <h1 className={`${darkmode ? 'text-sm lg:text-xl font-semibold text-white' : 
+            'text-sm font-semibold text-black lg:text-xl'
+          }`}  >
             98674 82978
           </h1>
         </div>
         <FaUserCircle className='size-5 text-red-700'/>
       </div>
-
-
       </nav>
 
   )
 }
 
 export default Header
+
+
+
+// className={`${darkmode} ? 'text-sm lg:text-xl text-white font-semibold' : 'text-sm lg:text-xl text-black font-semibold'}`}

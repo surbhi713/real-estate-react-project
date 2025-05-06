@@ -17,7 +17,7 @@ function About() {
   const {darkmode, toggleDarkMode} = useDarkMode()
 
   return (
-    <section id='about' className={`${darkmode? 'dark: bg-black' : 'light bg-transparent'} w-full m-auto
+    <section id='about' className={`${darkmode? ' bg-black' : 'light bg-transparent'} w-full m-auto
     justify-center items-center gap-10 lg:40px px-10 py-20 grid lg:grid-cols-2 grid-cols-1`}>      
     <div>
       <img data-aos="zoom-in" src={about} alt="About img" className='
@@ -25,13 +25,15 @@ function About() {
     </div>
 
     <div className='flex flex-col justify-center items-start gap-8' >
-      <h1 data-aos="zoom-in" className='text-pink-900 font font-serif text-xl font-semibold
-       dark:text-white'>WHO WE ARE</h1>
-      <h1 data-aos="zoom=in" data-aos-delay="200" className='text-4xl font-semibold
-       text-black leading-10 dark:text-white
-      '> Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1>
-      <p data-aos="zoom=in" data-aos-delay="200" className='text-xl font-semibold
-       text-gray-800 leading-10 dark:text-white text-justify' >
+      
+      <h1 data-aos="zoom-in" className={`${darkmode ? 'text-white font-semibold text-xl font-serif' : 
+        'text-pink-900 font-serif text-xl font-semibold'
+      }`} >WHO WE ARE</h1>
+     
+      <h1 data-aos="zoom=in" data-aos-delay="200"  className={`${darkmode ? 'text-4xl font-semibold leading-10 text-amber-700' : 
+        'text-4xl font-semibold text-black leading-10 '}`} > Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1>
+      <p data-aos="zoom=in" data-aos-delay="200" className={`${darkmode?  'text-xl font-semibold text-amber-100 leading-10 text-justify' :
+      'text-xl font-semibold text-gray-800 leading-10 text-justify'}`} >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate 
         aliquid consequatur quae, est, ea quasi nulla eos fugiat illum tempore
         necessitatibus! Ipsam beatae corrupti quaerat quisquam velit dicta, eum nihil.</p>

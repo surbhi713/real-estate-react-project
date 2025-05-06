@@ -20,20 +20,21 @@ function Services() {
   const {darkmode,toggleDarkMode} = useDarkMode();
   
   return (
-    <div className={`${darkmode? 'dark:bg-black' : 'light bg-transparent'} pb-200`}>
+    <div className={`${darkmode? 'bg-black' : 'light bg-transparent rounded-xl'} pb-200`}>
       <section id="services" className={`${darkmode? 'dark:bg-gray-800' : 'light bg-white'}
       lg:px-20 px-6 py-20 gap-10 flex flex-col justify-center items-start lg:w-[95%] w-full 
       m-auto rounded-xl h-fit`}>
         <div className='flex flex-col justify-center items-start gap-4'>
           <h1 data-aos="zoom-in" className='text-xl text-red-500 font-semibold dark:text-white'>
             OUR SERVICES</h1>
-          <h1 data-aos="zoom-in" className='leading-7 font-semibold text-4xl dark:text-white'>
+          <h1 data-aos="zoom-in" className={`${darkmode ? 'leading-7 font-semibold text-white text-4xl' :
+            'leading-7 font-semibold text-4xl text-black'}`}>
           Top Real Estate <br /><br /> Services Available</h1>
         </div>
     {/* service-box */}
 
       <div id='service-box' className='grid lg:grid-cols-3 grid-cols-1 justify-center
-      items-center gap-8 lg:ml-20'>
+      items-center gap-8 lg:m-auto m-auto'>
         {
           service.map((item,index)=>(
             <div data-aos='zoom-in' key={index} className='justify-center items-center flex flex-col bg-white
@@ -57,3 +58,8 @@ function Services() {
 }
 
 export default Services
+
+
+
+
+//  className='leading-7 font-semibold text-4xl dark:text-white'

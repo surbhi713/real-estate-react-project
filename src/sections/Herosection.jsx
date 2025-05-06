@@ -14,12 +14,12 @@ function Herosection() {
       duration:800,
     })
   },[])
-  const {darkmode, toggleDarkMode} =useDarkMode()
+  const {darkmode, toggleDarkMode} = useDarkMode();
   return (
-    <>
+    <div className={`${darkmode ? 'bg-black' : 'light bg-transparent'}`}>
       {/* heroimg section */}
 
-       <div className={`${darkmode ? 'dark bg-black' : 'light bg-white'}`}>
+       <div className={`${darkmode ? ' bg-black' : 'light bg-transparent'}`}>
        <section id='hero' className='w-[95%] h-[600px] m-auto bg-cover bg-center 
        rounded-xl flex justify-center flex-col items-start lg:px-28 px-10 gap-7 z-20'
         style={{backgroundImage:`url(${heroimg})`}} >
@@ -31,24 +31,25 @@ function Herosection() {
        </div>
 
         {/* form starts here  */}
-        <div className={`${darkmode? 'dark bg-black' : 'light bg-transparent'}z-10`}>
-          <div data-aos="zoom-in" id="form" className={`${darkmode?'dark:bg-gray-800 ' : 'light bg-white'}
-            grid lg:grid-cols-4 grid-cols-1 
-          p-8 m-auto lg:w-[70%] w-full justify-center items-center gap-6 rounded-xl mt-14 
+        <div className={`${darkmode ? 'bg-black' : 'bg-transparent'}  z-10 `}>
+          <div data-aos="zoom-in" id="form" className={`${darkmode?'bg-gray-800 ' :
+           'light bg-white'} grid lg:grid-cols-4 grid-cols-1 mt-14
+          p-8 m-auto lg:w-[70%] w-full justify-center items-center gap-6 rounded-xl 
           `}>
             
            {/* grid lg:grid-cols-4 grid-cols-1  */}
           
          <div className='w-full'>
-            <h1 className='text-black font-semibold dark:text-white'>LOCATION</h1>
+          
+            <h1 className={`${darkmode ? 'text-white font-semibold' : 'text-black font-semibold'}`}>LOCATION</h1>
             <input type="text" placeholder='Enter an address, state, city or pincode' className='text-black bg-white p-2 
-            w-full mt-2 border-b-[1px] border-[#c9c7c1]' />
+            w-full mt-2 border-b-[1px] rounded-xl border-[#c9c7c1]' />
          </div>
 
          <div className='w-full'>
-            <h1 className="text-black font-semibold dark:text-white">TYPE</h1>
+            <h1 className={`${darkmode ? 'text-white font-semibold' : 'text-black font-semibold'}`}>TYPE</h1>
             <select name="selectOption" id="selectOption" className='bg-white p-2 border-b-[1px] w-full mt-2
-            border-[#c9c7c1] text-gray-500 text-md' defaultValue="">
+            border-[#c9c7c1] text-gray-500 text-md rounded-xl' defaultValue="">
               <option value="" disabled selected>Select Property</option>
               <option value="option1">Rentals1</option>
               <option value="option2">Rentals2</option>
@@ -57,9 +58,9 @@ function Herosection() {
          </div>
 
         <div className='w-full'>
-            <h1 className='text-black font-semibold dark:text-white'>Category</h1>
+            <h1 className={`${darkmode ? 'text-white font-semibold' : 'text-black font-semibold'}`}>Category</h1>
             <select name="categoryoption" id="categoryoption" className='bg-white p-2 border-b-[1px] w-full
-            mt-2 border-[#c9c7c1] text-gray-500 text-md' defaultValue="">
+            mt-2 border-[#c9c7c1] text-gray-500 text-md rounded-xl' defaultValue="">
               <option value="" disabled selected>Select Category</option>
               <option value="option1">Apartments</option>
               <option value="option2">Duples</option>
@@ -80,7 +81,7 @@ function Herosection() {
         </div>
        </div>
 
-    </>
+    </div>
   )
 }
 

@@ -17,8 +17,8 @@ function Contact() {
   const{darkmode,toggleDarkMode} =useDarkMode();
   return (
     <div className={`${darkmode? 'dark:bg-black' : 'light bg-transparent'}`}>
-      <section id='main_div' className={`${darkmode?'dark:bg-gray-800' : 'light bg-red-200'}
-      'lg:w-[95%] w-full h-fit m-auto rounded-xl flex  justify-center items-start
+      <section id='main_div' className={`${darkmode?'bg-gray-800 text-red-900' : 'light bg-amber-100'}
+      'lg:w-[50%] w-full h-fit m-auto flex  justify-center items-start
       py-20 px-6 lg:px-36 gap-10 lg:grid-cols-2 grid-cols-1'`}>
         <div data-aos="zoom-in" id="contact" className='flex flex-col bg-white w-full items-start rounded-xl
         justify-center p-10 gap-4'>
@@ -36,16 +36,23 @@ function Contact() {
         </div>
 
         <div id='reach-us' className='flex flex-col justify-center items-start gap-8  lg:p-20 p-6'>
-            <h1 data-aos="zoom-in" data-aos-delay="200" className='text-2xl font-semibold text-red-900'>REACH US</h1>
-            <h1 data-aos="zoom-in" data-aos-delay="400" className='text-4xl text-black dark:text-white leading-10
-            font-semibold'>Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit. Fugiat, eos!</h1>
-            <p data-aos="zoom-in" data-aos-delay="600" className='text-justify text-xl text-gray-800 flex flex-wrap'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ducimus, excepturi qui beatae nobis impedit perferendis obcaecati doloremque ullam sequi dolorum assumenda quas. Iusto saepe minima itaque perferendis animi error!</p>
+            <h1 data-aos="zoom-in" data-aos-delay="200"
+             className='text-2xl font-semibold text-red-900'>REACH US</h1>
+            <h1 data-aos="zoom-in" data-aos-delay="400" 
+            className={`${darkmode? 'text-4xl text-white font-semibold leading-10' : 
+              'light text-black text-4xl font-semibold leading-10'}`}
+            >Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit. Fugiat, eos!</h1>
+            <p data-aos="zoom-in" data-aos-delay="600"   className={`${darkmode? 
+            'text-justify text-xl text-amber-500 flex flex-wrap' : 
+            'text-justify text-xltext-gray-800 flex flex-wrap'}`}
+            >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ducimus, excepturi qui beatae nobis impedit perferendis obcaecati doloremque ullam sequi dolorum assumenda quas. Iusto saepe minima itaque perferendis animi error!</p>
             <button data-aos="zoom-in" data-aos-delay="800" className='bg-red-600 text-xl rounded-xl px-8  cursor-pointer py-3 text-white font-semibold
            justify-center w-full text-md dark:hover-bg-red-700 hover:bg-black'>Reach Us</button>
         </div>
       </section>
     </div>
-  )
-}
+  )}
+
+
 
 export default Contact

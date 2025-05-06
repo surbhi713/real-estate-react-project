@@ -18,13 +18,16 @@ function Client() {
 
   const {darkmode, toggleDarkMode} = useDarkMode();
   return (
-    <div className={`${darkmode ? 'dark:bg-black' : 'light bg-transparent'}`}>
+    <div className={`${darkmode ? 'bg-black' : 'light bg-transparent'}`}>
       <section id='testimonial' className='lg:w-[95%]
     w-full rounded-xl h-fit m-auto items-start justify-center flex flex-col bg-center bg-cover
     lg:px-20 px-6 py-20 gap-20 '>
         <div className='flex flex-col justify-center items-start gap-4'>
-        <h1 data-aos="zoom-in" className='text-xl text-red-900 dark:text-white font-semibold'>OUR CLIENTS</h1>
-        <h1 data-aos="zoom-in" className='text-4xl font-semibold text-black dark:text-white'>What Our Clients Says <br /> About Us</h1>
+        <h1 data-aos="zoom-in" className={`${darkmode? 'text-white text-xl font-semibold' 
+          :'text-xl text-red-900 font-semibold'}`}>OUR CLIENTS</h1>
+        <h1 data-aos="zoom-in" className={`${darkmode ? 'text-4xl font-semibold text-white'
+          : 'text-4xl font-semibold text-black dark:text-white'
+        }`}>What Our Clients Says <br /> About Us</h1>
         </div>
 
         <div id='client-box' className='grid lg:grid-cols-3 grid-cols-1
