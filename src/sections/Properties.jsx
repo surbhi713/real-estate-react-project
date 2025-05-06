@@ -20,14 +20,16 @@ function Properties() {
   const {darkmode,toggleDarkMode} = useDarkMode();
 
   return (
-    <div className={`${darkmode ? 'dark: bg-black' : 'light: bg-transparent'}
-    rounded-xl m-auto`}>
+    <div className={`${darkmode ? 'bg-black rounded-none' : 'light: bg-transparent rounded-xl'}
+     m-auto`}>
       <section id="properties" className=" lg:w-[90%] w-full flex flex-col 
       justify-center items-start gap-10 m-auto lg:px-20 px-6 py-20 ">
         <div className=" flex flex-col justify-center items-start gap-4 ">
           <h1 data-aos="zoom-in" className="font-semibold text-red-900 text-xl
            dark:text-white">PROPERTIES</h1>
-          <h1 data-aos="zoom-in" className="font-semibold text-black text-4xl dark:text-white ">EXPLORE THE MOST</h1>
+          <h1 data-aos="zoom-in" className={`${darkmode? 'font-semibold text-white text-4xl' :
+            'text-black text-4xl font-semibold '
+          }`}>EXPLORE THE MOST</h1>
         </div>
         
         {/* properties grid start from here(images) */}
@@ -84,9 +86,10 @@ function Properties() {
 
             {/* about and icons */}
             <div className=" px-6 py-3 flex flex-col justify-center  items-start">
-              <h1 className="font-semibold font-xl dark:text-white">{item.name}</h1>
+              <h1 className={`${darkmode?'font-semibold font-xl text-white' : 
+                'font-semibold font-xl text-balck'}`}>{item.name}</h1>
               <h1 className="text-2xl font-bold text-red-600 dark:text-white">{item.price}</h1>
-              <p className="dark:text-white">{item.about}</p>
+              <p className={`${darkmode ? 'text-white':'text-black'}`}>{item.about}</p>
 
             <div id="icons" className="flex justify-center items-start gap-2">
             <div className="flex justify-center items-start gap-2 mt-2">
@@ -110,7 +113,7 @@ function Properties() {
              <div id="owner_info" className="flex justify-between items-center w-full mt-2">
              <div className="flex justify-center gap-2 items-center">
               <FaUserCircle className="size-5 text-red-400"/>
-              <h1 className="dark:text-white">{item.owner}</h1>
+              <h1 className={`${darkmode?'text-white' :'text-black'}`}>{item.owner}</h1>
              </div>
 
              <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer

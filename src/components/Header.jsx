@@ -38,7 +38,7 @@ function Header() {
       link:'Services' , path:'services'
     },
     {
-      link:'Testimonials' , path:'testimonials'
+      link:'Popular Areas' , path:'popularareas'
     },
   ]
   return (
@@ -65,20 +65,23 @@ function Header() {
 
     <div className='flex justify-center items-center lg:hidden' onClick={togglemenu}>
       <div>
-        {isMenuOpen? <FaXmark className='text-black text-2xl cursor-pointer py
-        dark:text-white'/> : <FaBars className='text-black text-2xl cursor-pointer
+        {isMenuOpen? <FaXmark className='text-red-600 text-2xl cursor-pointer py
+        dark:text-white'/> : <FaBars className='text-red-600 text-2xl cursor-pointer
         dark:text-white'/>}        
       </div>
+
+
     </div>
   
-   <div className={`${isMenuOpen? 'flex' : 'hidden'}  w-full h-fit  bg-slate-800 p-4 
-   absolute top-[80px] left-0'`} onClick={closemenu}>
-x     <ul className='flex flex-col justify-center items-center gap-2 w-full '>
+   <div className={`${isMenuOpen? 'flex' : 'hidden'}  w-full h-fit  bg-slate-800 
+   absolute top-[80px] p-4 left-0 rounded-xl'`} onClick={closemenu}>
+    <ul className='flex flex-col justify-center items-center gap-2 w-full '>
+
       {
         navItmes.map(({link,path})=>(
-        <Link key={path} spy={true} offset={-100} smooth={true}
-        className='text-black text-[15px] font-semibold uppercase cursor-pointer
-          px-3 py-2 rounded-lg dark:text-white hover:bg-red-600 hover:text-white'>{link}</Link>
+          <Link key={path} spy={true} offset={-100} smooth={true}  
+          className={`${darkmode ? 'text-white text-[15px] font-semibold uppercase cursor-pointer px-3 py-2 rounded-lg hover:text-white hover:bg-red-700 ' : 
+            'text-white text-[15px font-semibold uppercase cursor-pointer hover:bg-red-600 hover:text-white rounded-lg px-3 py-2  ]'}`}>{link}</Link>
         ))
       }
     </ul>
@@ -104,4 +107,3 @@ export default Header
 
 
 
-// className={`${darkmode} ? 'text-sm lg:text-xl text-white font-semibold' : 'text-sm lg:text-xl text-black font-semibold'}`}

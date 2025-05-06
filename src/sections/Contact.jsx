@@ -17,10 +17,10 @@ function Contact() {
   const{darkmode,toggleDarkMode} =useDarkMode();
   return (
     <div className={`${darkmode? 'dark:bg-black' : 'light bg-transparent'}`}>
-      <section id='main_div' className={`${darkmode?'bg-gray-800 text-red-900' : 'light bg-amber-100'}
-      'lg:w-[50%] w-full h-fit m-auto flex  justify-center items-start
-      py-20 px-6 lg:px-36 gap-10 lg:grid-cols-2 grid-cols-1'`}>
-        <div data-aos="zoom-in" id="contact" className='flex flex-col bg-white w-full items-start rounded-xl
+      <section id='main_div' className={`${darkmode?'bg-gray-800 text-red-900' : 
+      'light bg-amber-100'}lg:w-[50%] w-full h-fit m-auto lg:flex justify-center items-start
+      py-20 px-6 lg:px-36 gap-10 lg:grid-cols-2 grid-cols-1`}>
+        <div data-aos="zoom-in" id="contact" className='flex flex-col lg:[50%] bg-white w-full items-start rounded-xl
         justify-center p-10 gap-4'>
           <h1 className='text-3xl  font-semibold dark:text-white '>Send us a message today</h1>
           <input type="text" name="" placeholder='Enter your full name here' id="" className='
@@ -44,7 +44,7 @@ function Contact() {
             >Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit. Fugiat, eos!</h1>
             <p data-aos="zoom-in" data-aos-delay="600"   className={`${darkmode? 
             'text-justify text-xl text-amber-500 flex flex-wrap' : 
-            'text-justify text-xltext-gray-800 flex flex-wrap'}`}
+            'text-justify text-xl text-gray-800 flex flex-wrap'}`}
             >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ducimus, excepturi qui beatae nobis impedit perferendis obcaecati doloremque ullam sequi dolorum assumenda quas. Iusto saepe minima itaque perferendis animi error!</p>
             <button data-aos="zoom-in" data-aos-delay="800" className='bg-red-600 text-xl rounded-xl px-8  cursor-pointer py-3 text-white font-semibold
            justify-center w-full text-md dark:hover-bg-red-700 hover:bg-black'>Reach Us</button>

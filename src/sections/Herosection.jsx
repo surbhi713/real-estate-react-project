@@ -33,15 +33,16 @@ function Herosection() {
         {/* form starts here  */}
         <div className={`${darkmode ? 'bg-black' : 'bg-transparent'}  z-10 `}>
           <div data-aos="zoom-in" id="form" className={`${darkmode?'bg-gray-800 ' :
-           'light bg-white'} grid lg:grid-cols-4 grid-cols-1 mt-14
-          p-8 m-auto lg:w-[70%] w-full justify-center items-center gap-6 rounded-xl 
+           'light bg-white '} grid lg:grid-cols-4 grid-cols-1 mt-14
+          p-8 m-auto lg:w-[70%] w-[80%] justify-center items-center gap-6 rounded-xl 
           `}>
             
            {/* grid lg:grid-cols-4 grid-cols-1  */}
           
          <div className='w-full'>
           
-            <h1 className={`${darkmode ? 'text-white font-semibold' : 'text-black font-semibold'}`}>LOCATION</h1>
+            <h1 className={`${darkmode ? 'text-white font-semibold' : 'text-black font-semibold'}`}>
+              LOCATION</h1>
             <input type="text" placeholder='Enter an address, state, city or pincode' className='text-black bg-white p-2 
             w-full mt-2 border-b-[1px] rounded-xl border-[#c9c7c1]' />
          </div>
