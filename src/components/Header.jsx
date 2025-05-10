@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link}from "react-scroll"
+import { Link} from "react-scroll"
 import {FaXmark,FaBars} from "react-icons/fa6";
 import { useDarkMode } from './DarkModeContext';
 import logo from '../../assets/images/logo.png'
@@ -54,8 +54,9 @@ function Header() {
       {
         navItmes.map(({link,path})=>(
           <Link key={path} to={path} spy={true} offset={-100} smooth={true}
-          className={`${darkmode ? 'text-white text-[15px] font-semibold uppercase cursor-pointer px-3 py-2 rounded-lg dark:text-white hover:bg-red-600 hover:text-white' :
-             'text-black text-[15px] font-semibold uppercase cursor-pointer px-3 py-2 rounded-lg dark:text-white hover:bg-red-600 hover:text-white'}`}>{link}</Link>
+          className={`${darkmode ? 'text-white text-[15px] font-semibold uppercase cursor-pointer px-3 py-2 rounded-lg  hover:bg-red-600 hover:text-white' :
+             'text-black text-[15px] font-semibold uppercase cursor-pointer px-3 py-2 rounded-lg  hover:bg-red-600 hover:text-white'}`}>
+              {link}</Link>
         ))
       }
 
@@ -79,7 +80,7 @@ function Header() {
 
       {
         navItmes.map(({link,path})=>(
-          <Link key={path} spy={true} offset={-100} smooth={true}  
+          <Link key={path} to={path} spy={true} offset={-100} smooth={true}  
           className={`${darkmode ? 'text-white text-[15px] font-semibold uppercase cursor-pointer px-3 py-2 rounded-lg hover:text-white hover:bg-red-700 ' : 
             'text-white text-[15px font-semibold uppercase cursor-pointer hover:bg-red-600 hover:text-white rounded-lg px-3 py-2  ]'}`}>{link}</Link>
         ))
