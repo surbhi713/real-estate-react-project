@@ -42,7 +42,7 @@ function Header() {
     },
   ]
   return (
-   <nav  className={`${darkmode ? 'bg-black' : 'light bg-[#f3f3f3]'} flex justify-between items-center
+   <nav  className={`${darkmode?'bg-black' : 'light bg-[#f3f3f3]' } flex justify-between items-center
    gap-4 lg:px-20 px-4 py-3 sticky top-0 z-30`}>
 
       <div id='logo'>
@@ -69,6 +69,9 @@ function Header() {
         {isMenuOpen? <FaXmark className='text-red-600 text-2xl cursor-pointer py
         dark:text-white'/> : <FaBars className='text-red-600 text-2xl cursor-pointer
         dark:text-white'/>}        
+
+        {/* {isMenuOpen? <FaXmark className={`${darkmode ? 'text-white' : 'text-red-600'} text-2xl cursor-pointer`} : <FaBars className={`${darkmode ? 'text-white' : 'text-red-600'} text-2xl cursor-pointer`} */}
+
       </div>
 
 

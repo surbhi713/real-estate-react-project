@@ -20,7 +20,7 @@ function Services() {
   const {darkmode,toggleDarkMode} = useDarkMode();
   
   return (
-    <div className={`${darkmode? 'bg-black' : 'light bg-transparent rounded-xl'} pb-200`}>
+    <div className={`${darkmode? 'bg-black' : ' bg-transparent rounded-xl'} pb-200`}>
       <section id="services" className={`${darkmode? 'dark:bg-gray-800' : 'light bg-white'}
       lg:px-20 px-6 py-20 gap-10 flex flex-col justify-center items-start lg:w-[95%] w-full 
       m-auto rounded-xl h-fit`}>
@@ -37,16 +37,18 @@ function Services() {
       items-center gap-8 lg:m-auto m-auto'>
         {
           service.map((item,index)=>(
-            <div data-aos='zoom-in' key={index} className='justify-center items-center flex flex-col bg-white
-            dark:bg-black h-[350px]  px-8 py-16 gap-4 rounded-xl border-b-[5px]
-            border-red-600 hover:bg-red-300 cursor-pointer'>
+            <div data-aos='zoom-in' key={index} className={`${darkmode ? 'bg-black' : 'bg-white'}
+            justify-center items-center flex flex-col 
+             h-[350px]  px-8 py-16 gap-4 rounded-xl border-b-[5px]
+            border-red-600 hover:bg-red-300 cursor-pointer`}>
               <div className='p-6 rounded-full bg-red-200'>
                 <item.icon className='text-red-600 size-10 transition-transform duration-300 transform hover:scale-110'/>
               </div>
-              <h1 className='text-black text-3xl font-semibold dark:text-white'>{item.title}</h1>
-              <p className='text-lg text-slate-700 dark:text-white'>{item.desc}</p>
-              <button className='p-0 border-b-2 border-red-600 font-semibold 
-              dark:text-white'>Read More</button>
+              <h1 className={`${darkmode ?'text-white' : 'text-black'} text-3xl font-semibold`}>{item.title}</h1>
+              <p className={`${darkmode ?'text-white' : 'text-black'} text-lg`}>{item.desc}</p>
+              <button className={`${darkmode ?'text-white' : 'text-black'} p-0 border-b-2 border-red-600 font-semibold`}
+               
+             >Read More</button>
             </div>
           ))
         }

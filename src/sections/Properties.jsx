@@ -25,8 +25,8 @@ function Properties() {
       <section id="properties" className=" lg:w-[90%] w-full flex flex-col 
       justify-center items-start gap-10 m-auto lg:px-20 px-6 py-20 ">
         <div className=" flex flex-col justify-center items-start gap-4 ">
-          <h1 data-aos="zoom-in" className="font-semibold text-red-900 text-xl
-           dark:text-white">PROPERTIES</h1>
+          <h1 data-aos="zoom-in" className={`${darkmode ? 'text-white' : 'text-red-900'}
+          font-semibold text-xl`}>PROPERTIES</h1>
           <h1 data-aos="zoom-in" className={`${darkmode? 'font-semibold text-white text-4xl' :
             'text-black text-4xl font-semibold '
           }`}>EXPLORE THE MOST</h1>
@@ -39,8 +39,8 @@ function Properties() {
         property.map((item,index)=>{
           return(
             <div id="image_container" data-aos="zoom-in" data-aos-delay="200"
-             key={index} className="dark:bg-gray-800 rounded-xl
-             w-full">
+             key={index} className={`${darkmode ? 'bg-black' : 'bg-white'}  rounded-xl
+             w-full`}>
               
             <div id="image-box" className="bg-cover bg-center h-[250px] rounded-xl
               p-4 flex flex-col justify-between items-start" 
@@ -87,22 +87,22 @@ function Properties() {
             {/* about and icons */}
             <div className=" px-6 py-3 flex flex-col justify-center  items-start">
               <h1 className={`${darkmode?'font-semibold font-xl text-white' : 
-                'font-semibold font-xl text-balck'}`}>{item.name}</h1>
-              <h1 className="text-2xl font-bold text-red-600 dark:text-white">{item.price}</h1>
+                'font-semibold font-xl text-black'}`}>{item.name}</h1>
+              <h1 className="text-2xl font-bold text-red-600 ">{item.price}</h1>
               <p className={`${darkmode ? 'text-white':'text-black'}`}>{item.about}</p>
 
             <div id="icons" className="flex justify-center items-start gap-2">
             <div className="flex justify-center items-start gap-2 mt-2">
                 <FaBath className="size-5 text-red-900"/>
-                <h1 className="dark:text-white">{item.bath}</h1>
+                <h1 className={`${darkmode ? 'text-white':'text-black'}`}>{item.bath}</h1>
               </div>
               <div className="flex justify-center items-start gap-2  mt-2">
                 <FaBed className="size-5 text-red-900"/>
-                <h1 className="dark:text-white">{item.bed}</h1>
+                <h1 className={`${darkmode ? 'text-white':'text-black'}`}>{item.bed}</h1>
               </div>
               <div className="flex justify-center items-start gap-2  mt-2">
                 <MdSpaceDashboard className="size-5 text-red-900"/>
-                <h1 className="dark:text-white">{item.area}</h1>
+                <h1 className={`${darkmode ? 'text-white':'text-black'}`}>{item.area}</h1>
               </div>
 
             </div>

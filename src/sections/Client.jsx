@@ -34,19 +34,22 @@ function Client() {
         justify-center items-center gap-8 w-full'>
           {
             client.map((items,index)=>(
-              <div data-aos="zoom-in" data-aos-delay="200" key={index} className='rounded-xl bg-white justify-center
-               items-start gap-6 cursor-pointer flex flex-col p-12 hover:bg-red-100
-               dark:bg-black'>
-                <div className='flex justify-start items-center w-full gap-4'>
+              <div data-aos="zoom-in" data-aos-delay="200" key={index} className={`${darkmode? 'bg-black ' : 
+                'bg-white'}
+                rounded-xl  justify-center
+               items-start gap-6 cursor-pointer flex flex-col p-12 hover:bg-zinc-900
+               `}>
+                <div className='flex justify-start items-center w-full gap-4 '>
                 <img src={items.image} alt="" className='w-[50%] transform hover:scale-110
                 transition-transform duration-300'/>
                 <div className='justify-center items-start gap-1 flex flex-col '>
-                  <h1 className='text-xl text-black font-semibold dark:text-white' >{items.name}</h1>
-                  <h1 className='text-slate-600 dark:text-white'>{items.text}</h1>
+                  <h1 className={`${darkmode ? 'text-white'  : 'text-black'} text-xl font-semibold`} >
+                    {items.name}</h1>
+                  <h1 className={`${darkmode ? 'text-white' : 'text-slate-600'}`}>{items.text}</h1>
                 </div>
                 </div>
 
-              <p className='text-md text-justify text-slate-600 dark:text-white'>
+              <p className={`${darkmode ? 'text-white' : 'text-slate-600'} text-md text-justify`}>
                 {items.feedback}</p>
                 <div className='justify-start items-start flex gap-2 w-full'>
                     <FaStar className='size-4 text-yellow-400'/>

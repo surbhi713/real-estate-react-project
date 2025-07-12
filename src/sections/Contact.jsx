@@ -17,12 +17,18 @@ function Contact() {
   const{darkmode,toggleDarkMode} =useDarkMode();
   return (
     <div className={`${darkmode? 'dark:bg-black' : 'light bg-transparent'}`}>
-      <section id='main_div' className={`${darkmode?'bg-gray-800 text-red-900' : 
+      <section id='main_div' className={`${darkmode?'bg-zinc-900 text-red-900' : 
       'light bg-amber-100'}lg:w-[50%] w-full h-fit m-auto lg:flex justify-center items-start
       py-20 px-6 lg:px-36 gap-10 lg:grid-cols-2 grid-cols-1`}>
+
+
         <div data-aos="zoom-in" id="contact" className='flex flex-col lg:[50%] bg-white w-full items-start rounded-xl
         justify-center p-10 gap-4'>
-          <h1 className='text-3xl  font-semibold dark:text-white '>Send us a message today</h1>
+
+
+          <h1 className={`${darkmode ? 'text-black' :'text-white'} text-3xl  font-semibold`} >Send us a message today</h1>
+
+
           <input type="text" name="" placeholder='Enter your full name here' id="" className='
           w-full rounded-xl px-6 py-3 border-2 border-gray-300'/>
           <input type="text" name="" id="" placeholder='Enter your valid email-id' className='
@@ -36,8 +42,12 @@ function Contact() {
         </div>
 
         <div id='reach-us' className='flex flex-col justify-center items-start gap-8  lg:p-20 p-6'>
+
+
             <h1 data-aos="zoom-in" data-aos-delay="200"
              className='text-2xl font-semibold text-red-900'>REACH US</h1>
+
+             
             <h1 data-aos="zoom-in" data-aos-delay="400" 
             className={`${darkmode? 'text-4xl text-white font-semibold leading-10' : 
               'light text-black text-4xl font-semibold leading-10'}`}
